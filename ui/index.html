@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head lang="en">
+        <base href="/">
+        <meta charset="UTF-8">
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!--import font awesome-->
+        <script src="https://use.fontawesome.com/12c654f225.js"></script>
+
+        <!-- Materialize CSS stuff below-->
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!--website tag-->
+        <title>WebRat</title>
+    </head>
+
+    <body>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+        <!--angular app div-->
+        <div ng-app="app" ng-cloak>
+            <!--Navigation Bar-->
+            <div>
+                <div class="navbar-fixed">
+                    <nav class="blue">
+                        <div class="nav-wrapper"> <a href="/" class="brand-logo">WebRat</a>
+                            <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="#">Log In</a></li>
+                                <li><a href="#">Sign Up</a></li>
+                                <li><a href="/newReport">Make New Report</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="container">
+                <ui-view>
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                </ui-view>
+            </div>
+
+
+            <footer class="page-footer orange">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Team Bio</h5>
+                            <p class="grey-text text-lighten-4">We need Summer 2018 Internship offers</p>
+                        </div>
+                        <div class="col l3 s12">
+                            <h5 class="white-text">Settings</h5>
+                            <ul>
+                                <li>
+                                    <a class="white-text" href="#!">Link 1</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 2</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 3</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l3 s12">
+                            <h5 class="white-text">Connect</h5>
+                            <ul>
+                                <li>
+                                    <a class="white-text" href="#!">Link 1</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 2</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 3</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!--some scripts-->
+
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDVk6PByGI2tzLC8VQrpN8fYqALQ3xFoFM",
+                authDomain: "ratdatabase2340.firebaseapp.com",
+                databaseURL: "https://ratdatabase2340.firebaseio.com",
+                projectId: "ratdatabase2340",
+                storageBucket: "ratdatabase2340.appspot.com",
+                messagingSenderId: "73549300130"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="bundle.js"></script>
+    </body>
+</html>

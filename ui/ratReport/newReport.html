@@ -1,0 +1,54 @@
+<div class="container">
+    <!--brough-->
+    <div class="row" align="center">
+        <div class="input-field col s12">
+            <select ng-model="vm.newReportInfo.borough">
+                <option value="" disabled selected>Choose your option</option>
+                <option ng-repeat="borough in vm.availableBorough">{{borough}}</option>
+            </select>
+            <label>Select Borough</label>
+        </div>
+    </div>
+
+    <!--incidentAddress-->
+    <div class="row" align="center">
+        <div class="input-field col s12">
+            <input ng-model='vm.newReportInfo.incidentAddress' id="incidentAddress" type="text" class="validate">
+            <label>Input Incident Address</label>
+        </div>
+    </div>
+
+    <!--incidentZip and incidentCity-->
+    <div class="row" align="center">
+        <div class="input-field col s6">
+            <input ng-model='vm.newReportInfo.incidentZip' id="incidentZip" type="text" class="validate" data-length="5">
+            <label>Input Incident Zip</label>
+        </div>
+        <div class="input-field col s6">
+            <input ng-model='vm.newReportInfo.city' id="city" type="text" class="validate">
+            <label>Input City</label>
+        </div>
+    </div>
+
+    <!--locationType-->
+    <div class="row" align="center">
+        <div class="input-field col s12">
+            <input ng-model='vm.newReportInfo.locationType' id="locationType" type="text" class="validate">
+            <label>Input Location Type</label>
+        </div>
+    </div>
+
+    <button ng-click='vm.submitNewReport()' class="btn waves-effect purple waves-light" type="submit" name="action">
+        Submit New Report
+        <i class="material-icons right">send</i>
+    </button>
+
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+        $(document).ready(function() {
+            $('input#incidentZip').characterCounter();
+        });
+    </script>
+</div>
