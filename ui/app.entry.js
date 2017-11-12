@@ -4,10 +4,14 @@ import uiRouter from '@uirouter/angularjs';
 // import function to register all controllers
 import registerControllers from './app.controllers';
 
+// import function to register all services
+import registerServices from './app.service'
+
 // declare angular app
 const angularApp = angular.module('app', [uiRouter]);
 
 registerControllers(angularApp);
+registerServices(angularApp);
 
 angularApp.config(($stateProvider, $locationProvider) => {
 

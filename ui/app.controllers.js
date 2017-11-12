@@ -7,5 +7,5 @@ export default (angularApp) => {
     angularApp.controller('TestPageController', ['$scope', '$log', testPageControllerFunction]);
     angularApp.controller('RootController', ['$scope', '$log', rootControllerFunction]);
     angularApp.controller('SignInController', ['$scope', '$log', signInControllerFunction]);
-    angularApp.controller('NewReportController', ['$scope', '$log', newReportControllerFunction]);
+    angularApp.controller('NewReportController', ['$scope', '$log', 'NewRatReportService', '$state', newReportControllerFunction]);
 }

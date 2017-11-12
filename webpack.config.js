@@ -33,10 +33,12 @@ var webpackConfig = {
             ignore: [
                 'app.entry.js',
                 'app.controllers.js',
+                'app.service.js',
                 'testPage/testPage.controller.js',
                 'root/root.controller.js',
                 'user/signIn.controller.js',
-                'ratReport/newReport.controller.js'
+                'ratReport/newReport.controller.js',
+                'ratReport/newReport.service.js'
             ]
         }),
     ],
