@@ -1,0 +1,36 @@
+
+<div class="container">
+    <div class="progress" ng-show="!vm.dataReady">
+        <div class="indeterminate"></div>
+        <p>jack</p>
+    </div>
+
+    <table ng-show="vm.dataReady">
+        <thead>
+        <tr>
+            <th>City</th>
+            <th>Borough</th>
+            <th>Incident Address</th>
+            <th>Incident Zip</th>
+            <th>Created Date</th>
+            <th>View Details</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="reportEntry in vm.reportList">
+                <td>{{reportEntry.city}}</td>
+                <td>{{reportEntry.borough}}</td>
+                <td>{{reportEntry.incidentAddress}}</td>
+                <td>{{reportEntry.incidentZip}}</td>
+                <td>{{reportEntry.createdDate}}</td>
+                <td>
+                    <button ng-click="vm.redirectToDetailsView(reportEntry.uniqueKey)" class="btn waves-effect waves-light">
+                        View
+                        <i class="material-icons right">send</i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

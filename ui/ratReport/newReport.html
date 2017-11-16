@@ -11,6 +11,17 @@
             </div>
         </div>
 
+        <!--locationType-->
+        <div class="row" align="center">
+            <div class="input-field col s12">
+                <select ng-model="vm.newReportInfo.locationType" required>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option ng-repeat="location in vm.availableLocations">{{location}}</option>
+                </select>
+                <label>Select Location Type</label>
+            </div>
+        </div>
+
         <!--incidentAddress-->
         <div class="row" align="center">
             <div class="input-field col s12">
@@ -28,14 +39,6 @@
             <div class="input-field col s6">
                 <input ng-model='vm.newReportInfo.city' id="city" type="text" class="validate" required>
                 <label>Input City</label>
-            </div>
-        </div>
-
-        <!--locationType-->
-        <div class="row" align="center">
-            <div class="input-field col s12">
-                <input ng-model='vm.newReportInfo.locationType' id="locationType" type="text" class="validate" required>
-                <label>Input Location Type</label>
             </div>
         </div>
     </form>

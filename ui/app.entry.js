@@ -30,6 +30,11 @@ angularApp.config(($stateProvider, $locationProvider) => {
         templateUrl: 'root/root.html',
         controllerAs: 'vm',
         controller: 'RootController'
+    }).state('viewLatestReports', {
+        url: '/viewLatestReports',
+        templateUrl: 'latestReports/latestReports.html',
+        controllerAs: 'vm',
+        controller: 'ViewLatestReportsController'
     }).state('newReport', {
         url: '/newReport',
         templateUrl: 'ratReport/newReport.html',

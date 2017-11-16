@@ -38,7 +38,9 @@ var webpackConfig = {
                 'root/root.controller.js',
                 'user/signIn.controller.js',
                 'ratReport/newReport.controller.js',
-                'ratReport/newReport.service.js'
+                'ratReport/newReport.service.js',
+                'latestReports/latestReports.controller.js',
+                'latestReports/latestReports.service.js'
             ]
         }),
     ],

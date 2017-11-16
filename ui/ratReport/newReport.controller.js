@@ -3,6 +3,8 @@ export default function($scope, $log, NewRatReportService, $state) {
     const vm = this;
 
     vm.availableBorough = ['The Bronx', 'Queens', 'Brooklyn', 'Staten Island'];
+    vm.availableLocations = ['Family Dwelling', 'Family Apt. Building', 'Family Mixed Use Building',
+                            'Commercial Building', 'Vacant Lot', 'Construction Site', 'Hospital', 'Catch Basin/Sewer'];
     vm.uncastedZip = null;
     vm.submitting = false;
     vm.newReportInfo = {
