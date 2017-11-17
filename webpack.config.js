@@ -40,7 +40,9 @@ var webpackConfig = {
                 'ratReport/newReport.controller.js',
                 'ratReport/newReport.service.js',
                 'latestReports/latestReports.controller.js',
-                'latestReports/latestReports.service.js'
+                'latestReports/latestReports.service.js',
+                'viewReport/viewReport.controller.js',
+                'viewReport/viewReport.service.js'
             ]
         }),
     ],

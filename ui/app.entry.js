@@ -40,6 +40,14 @@ angularApp.config(($stateProvider, $locationProvider) => {
         templateUrl: 'ratReport/newReport.html',
         controllerAs: 'vm',
         controller: 'NewReportController'
+    }).state('viewReport', {
+        url: '/viewReport',
+        templateUrl: 'viewReport/viewReport.html',
+        controllerAs: 'vm',
+        controller: 'ViewReportController',
+        params: {
+            reportId: null
+        }
     });
 
     $locationProvider.html5Mode(true);

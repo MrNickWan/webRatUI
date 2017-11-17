@@ -1,0 +1,73 @@
+<div class="container">
+
+        <div class="row" align="center">
+            <!--brough-->
+            <div class="input-field col s6">
+                <input ng-model="vm.reportInfo.borough" disabled>
+                <label class="active">Borough</label>
+            </div>
+
+            <!--locationType-->
+            <div class="input-field col s6">
+                <input ng-model="vm.reportInfo.locationType" disabled>
+                <label class="active">Location Type</label>
+            </div>
+        </div>
+
+
+        <!--incidentAddress-->
+        <div class="row" align="center">
+            <div class="input-field col s12">
+                <input ng-model='vm.reportInfo.incidentAddress' id="incidentAddress" disabled>
+                <label class="active">Incident Address</label>
+            </div>
+        </div>
+
+        <!--incidentZip and incidentCity-->
+        <div class="row" align="center">
+            <div class="input-field col s6">
+                <input ng-model='vm.reportInfo.incidentZip' id="incidentZip" disabled>
+                <label class="active">Incident Zip</label>
+            </div>
+            <div class="input-field col s6">
+                <input ng-model='vm.reportInfo.city' id="city" disabled>
+                <label class="active">City</label>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <div class="row" align="center" ng-show="!vm.dataReady">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" align="center">
+            <p class="flow-text">
+                {{vm.loadingMessage}}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+        $(document).ready(function() {
+            $('input#incidentZip').characterCounter();
+        });
+    </script>
+</div>

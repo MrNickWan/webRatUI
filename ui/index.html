@@ -43,6 +43,12 @@
                         </div>
                     </nav>
                 </div>
+                <ul class="side-nav" id="mobile">
+                    <li><a href="/signIn">Log In</a></li>
+                    <li><a href="/signIn">Sign Up</a></li>
+                    <li><a href="/newReport">Make New Report</a></li>
+                    <li><a href="/viewLatestReports">View Latest Reports</a></li>
+                </ul>
             </div>
 
             <div class="container">
@@ -119,6 +125,7 @@
                 messagingSenderId: "73549300130"
             };
             firebase.initializeApp(config);
+            $(".button-collapse").sideNav();
         </script>
         <script src="bundle.js"></script>
     </body>
