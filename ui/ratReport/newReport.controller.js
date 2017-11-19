@@ -23,7 +23,12 @@ export default function($scope, $log, NewRatReportService, $state) {
         if (vm.verifyReportInput()) {
             vm.submitting = true;
             vm.newReportInfo.incidentZip = vm.uncastedZip.toString();
-            navigator.geolocation.getCurrentPosition(vm.populateGeolocation);
+
+            if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+                navigator.geolocation.getCurrentPosition(vm.populateGeolocation);
+            } else {
+                vm.populateGeolocation(null);
+            }
 
             // NewRatReportService.submitNewReport(vm.newReportInfo)
         }
@@ -46,8 +51,11 @@ export default function($scope, $log, NewRatReportService, $state) {
     };
 
     vm.populateGeolocation = (position) => {
-        vm.newReportInfo.latitude = position.coords.latitude;
-        vm.newReportInfo.longitude = position.coords.longitude;
+
+        if (position !== null) {
+            vm.newReportInfo.latitude = position.coords.latitude;
+            vm.newReportInfo.longitude = position.coords.longitude;
+        }
 
         console.log('[Before submission] Content in newReportInfo');
         console.log(vm.newReportInfo);

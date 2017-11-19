@@ -42,7 +42,9 @@ var webpackConfig = {
                 'latestReports/latestReports.controller.js',
                 'latestReports/latestReports.service.js',
                 'viewReport/viewReport.controller.js',
-                'viewReport/viewReport.service.js'
+                'viewReport/viewReport.service.js',
+                'mapView/mapView.controller.js',
+                'mapView/mapView.service.js'
             ]
         }),
     ],

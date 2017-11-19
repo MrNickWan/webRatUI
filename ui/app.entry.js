@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
+import ngMap from 'ngmap';
 
 // import function to register all controllers
 import registerControllers from './app.controllers';
@@ -8,7 +9,7 @@ import registerControllers from './app.controllers';
 import registerServices from './app.service'
 
 // declare angular app
-const angularApp = angular.module('app', [uiRouter]);
+const angularApp = angular.module('app', [uiRouter, ngMap]);
 
 registerControllers(angularApp);
 registerServices(angularApp);
@@ -48,6 +49,11 @@ angularApp.config(($stateProvider, $locationProvider) => {
         params: {
             reportId: null
         }
+    }).state('mapView', {
+        url: '/mapView',
+        templateUrl: 'mapView/mapView.html',
+        controllerAs: 'vm',
+        controller: 'MapViewController',
     });
 
     $locationProvider.html5Mode(true);
