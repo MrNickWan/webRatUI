@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div class="row" align="center">
+        <h5>
+            Pick desired date range below for graphing
+        </h5>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s5">
+            <input id="beginDatePicker" type="text" class="datepicker" ng-model="vm.startDate">
+            <label class="active">Start Date</label>
+        </div>
+        <div class="input-field col s5">
+            <input id= "endDatePicker" type="text" class="datepicker" ng-model="vm.endDate">
+            <label class="active">End Date</label>
+        </div>
+        <div class="input-field col s2">
+            <button ng-click='vm.groupResult()' class="btn waves-effect waves-light"
+                    type="submit" name="action" ng-disabled="vm.startDate == null || vm.endDate == null || vm.requestInProgress">
+                Graph
+            </button>
+        </div>
+    </div>
+
+    <div id="container" align="center">
+        <p class="flow-text">Waiting for data....</p>
+    </div>
+
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+    </script>
+</div>

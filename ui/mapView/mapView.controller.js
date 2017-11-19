@@ -67,7 +67,7 @@ export default function($scope, $log, MapViewService, $window, NgMap, $state) {
         });
 
 
-    }
+    };
 
     vm.viewDetailedInfo = (event, e) => {
         $state.go('viewReport', {

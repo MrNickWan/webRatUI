@@ -54,6 +54,11 @@ angularApp.config(($stateProvider, $locationProvider) => {
         templateUrl: 'mapView/mapView.html',
         controllerAs: 'vm',
         controller: 'MapViewController',
+    }).state('graphView', {
+        url: '/graphView',
+        templateUrl: 'graphView/graphView.html',
+        controllerAs: 'vm',
+        controller: 'GraphViewController'
     });
 
     $locationProvider.html5Mode(true);

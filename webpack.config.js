@@ -44,7 +44,9 @@ var webpackConfig = {
                 'viewReport/viewReport.controller.js',
                 'viewReport/viewReport.service.js',
                 'mapView/mapView.controller.js',
-                'mapView/mapView.service.js'
+                'mapView/mapView.service.js',
+                'graphView/graphView.controller.js',
+                'graphView/graphView.service.js'
             ]
         }),
     ],
