@@ -14,7 +14,13 @@ export default function($http, $q) {
         return $http.post('/rest/ratReport/saveReport', reportDetails).then(resolveCallBack, rejectCallBack);
     };
 
+    let removeOnlineUser = (user) => {
+        return $http.post('/rest/ratReport/removeOnlineUser', {'user': user}).then(resolveCallBack, rejectCallBack);
+    };
+
     return {
-        submitNewReport: submitNewReport
+        submitNewReport: submitNewReport,
+        removeOnlineUser: removeOnlineUser
+
     };
 }

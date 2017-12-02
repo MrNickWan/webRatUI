@@ -34,6 +34,21 @@
                 <i class="material-icons right">send</i>
             </button>
         </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="vm.otherMethods = !vm.otherMethods">
+                Other Methods
+                <i class="material-icons right">clear_all</i>
+            </button>
+        </div>
+
+        <div ng-show="vm.otherMethods">
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="vm.facebook()">
+                    Continue With Facebook
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
 
         <div ng-show="vm.resetPasswordOption">
             <div class="row">
@@ -50,6 +65,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <div ng-show="!vm.isSignIn" class="row">

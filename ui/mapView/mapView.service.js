@@ -14,7 +14,12 @@ export default function($http, $q) {
         return $http.get('/rest/ratReport/getReportsInRange?begin=' + beginDate + '&end=' + endDate).then(resolveCallBack, rejectCallBack);
     };
 
+    let removeOnlineUser = (user) => {
+        return $http.post('/rest/ratReport/removeOnlineUser', {'user': user}).then(resolveCallBack, rejectCallBack);
+    };
+
     return {
-        getReportsInRange: getReportsInRange
+        getReportsInRange: getReportsInRange,
+        removeOnlineUser: removeOnlineUser
     };
 }

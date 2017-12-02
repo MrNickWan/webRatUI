@@ -27,6 +27,26 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId            : '386112648490264',
+                    autoLogAppEvents : true,
+                    xfbml            : true,
+                    version          : 'v2.11'
+                });
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
         <!--angular app div-->
         <div ng-app="app" ng-cloak>
             <!--Navigation Bar-->

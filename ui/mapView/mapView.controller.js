@@ -42,7 +42,11 @@ export default function($scope, $log, MapViewService, $window, NgMap, $state) {
                 $('#login2').show();
                 $('#logout1').hide();
                 $('#logout2').hide();
-                $state.go('root');
+                MapViewService.removeOnlineUser(user.email).then(() => {
+                    $state.go('root');
+                }).catch(() => {
+                    Materialize.toast('Log out failed', 3000, 'rounded');
+                });
             }, (error) => {
                 Materialize.toast('Log out failed', 3000, 'rounded');
                 console.log(error);
@@ -59,7 +63,11 @@ export default function($scope, $log, MapViewService, $window, NgMap, $state) {
                 $('#login2').show();
                 $('#logout1').hide();
                 $('#logout2').hide();
-                $state.go('root');
+                MapViewService.removeOnlineUser(user.email).then(() => {
+                    $state.go('root');
+                }).catch(() => {
+                    Materialize.toast('Log out failed', 3000, 'rounded');
+                });
             }, (error) => {
                 Materialize.toast('Log out failed', 3000, 'rounded');
                 console.log(error);

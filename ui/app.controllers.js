@@ -10,10 +10,10 @@ import graphViewControllerFunction from './graphView/graphView.controller'
 export default (angularApp) => {
     angularApp.controller('TestPageController', ['$scope', '$log', testPageControllerFunction]);
     angularApp.controller('RootController', ['$scope', '$log', rootControllerFunction]);
-    angularApp.controller('SignInController', ['$scope', '$log', '$state', signInControllerFunction]);
+    angularApp.controller('SignInController', ['$scope', '$log', '$state', 'SignInService', signInControllerFunction]);
     angularApp.controller('NewReportController', ['$scope', '$log', 'NewRatReportService', '$state', newReportControllerFunction]);
     angularApp.controller('ViewLatestReportsController', ['$scope', '$log', 'LatestReportsService', '$state', viewLatestReportsControllerFunction]);
     angularApp.controller('ViewReportController', ['$scope', '$log', 'ViewReportService', '$state', '$stateParams', viewReportControllerFunction]);
     angularApp.controller('MapViewController', ['$scope', '$log', 'MapViewService', '$window', 'NgMap', '$state', mapViewControllerFunction]);
-    angularApp.controller('GraphViewController', ['$scope', 'GraphViewService', graphViewControllerFunction]);
+    angularApp.controller('GraphViewController', ['$scope', 'GraphViewService', '$state', graphViewControllerFunction]);
 }
