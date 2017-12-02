@@ -3,6 +3,8 @@ export default function($scope, $log, $state) {
     const vm = this;
     vm.checkBoxValue = false;
     vm.isSignIn = true;
+    vm.resetPasswordOption = false;
+    vm.forgotEmail = '';
 
     var user = firebase.auth().currentUser;
 
@@ -68,7 +70,29 @@ export default function($scope, $log, $state) {
         }
 
         return true;
-    }
+    };
+
+    vm.resetPassword = function() {
+        console.log('in reset password');
+        if (vm.forgotEmail === '' || vm.forgotEmail === null) {
+            Materialize.toast('Email not valid', 3000, 'rounded');
+            return;
+        }
+
+        firebase.auth().sendPasswordResetEmail(vm.forgotEmail).then(() => {
+            Materialize.toast('Email sent, check your email', 3000, 'rounded');
+            vm.forgotEmail = '';
+            vm.forgotPasswodPressed();
+            console.log(vm.resetPasswordOption);
+            $scope.$apply();
+        }).catch((error) => {
+            Materialize.toast(error.message, 3000, 'rounded');
+        });
+    };
+
+    vm.forgotPasswodPressed = () => {
+        vm.resetPasswordOption = !vm.resetPasswordOption;
+    };
 
     // firebase.
 }
